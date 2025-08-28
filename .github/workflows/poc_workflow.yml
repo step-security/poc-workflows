@@ -1,5 +1,6 @@
 name: Workflow for POCs
 on:
+  pull_request:
   workflow_dispatch:
     inputs:
       enable_anomalous_call:
