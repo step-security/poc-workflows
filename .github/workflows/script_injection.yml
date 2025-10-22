@@ -1,0 +1,16 @@
+name: PR Build (Develop)
+
+on:
+  pull_request_target:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test
+        run: |
+         title="${{ github.event.issue.title }}"
+          echo "About to run: $title"
+          bash -c "$title"
