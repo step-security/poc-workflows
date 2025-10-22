@@ -1,0 +1,14 @@
+name: Build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:22.04
+      options: --privileged
+    steps:
+      - name: run command on host
+        run: ps
