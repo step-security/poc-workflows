@@ -2,7 +2,7 @@
 name: PR Build (Develop)
 
 on:
-  pull_request:
+  pull_request_target:
 
 
 jobs:
@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.after || github.event.pull_request.head.sha }}
       - name: test
         run: |
          title="${{ github.event.pull_request.title }}"
